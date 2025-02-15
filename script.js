@@ -9,7 +9,11 @@ const questionText = document.getElementById('question-text');
 const answerButtonsElement = document.getElementById('answer-buttons');
 const progressBar = document.getElementById('progress-bar');
 const restartButton = document.getElementById('restart-button');
+const randomResultButton = document.getElementById('random-result-button');
 
+function showRandomResult() {
+    showResult();
+}
 function startQuiz() {
     console.log('Quiz started!');
     currentQuestionIndex = 0;
