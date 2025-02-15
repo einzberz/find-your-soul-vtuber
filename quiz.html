@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vtuber Personality Test</title>
+    <link rel="stylesheet" href="styles/quiz.css">
+</head>
+<body>
+    <div class="container">
+        <div id="quiz-container">            
+            <!-- Progress bar -->
+            <div class="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+            
+            <!-- Quiz section -->
+            <div id="question-container">
+                <h1 id="question-text"></h1>
+                <div id="answer-buttons" class="btn-grid">
+                    <!-- Buttons will be inserted here by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Results section (hidden initially) -->
+            <div id="result-container" class="hide">
+                <h1>วีที่ใช่สำหรับคุณคือออ</h1>
+                <div id="result-image-container">
+                    <img id="result-image" src="">
+                </div>
+                <p id="result-text"></p>
+                <button id="restart-button" class="btn">ทำอีกรอบ</button>
+                <p class="secret-desciprtion">*หายังไงก็เจอคนเดิมอยู่ดีแหละ*</p>
+            </div>
+        </div>
+    </div>
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
