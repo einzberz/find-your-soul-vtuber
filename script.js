@@ -1,5 +1,8 @@
 let currentQuestionIndex = 0;
 
+const startButton = document.getElementById('start-button');
+const landingContainer = document.querySelector('.landing-container');
+const quizContainer = document.getElementById('quiz-container');
 const questionContainer = document.getElementById('question-container');
 const resultContainer = document.getElementById('result-container');
 const questionText = document.getElementById('question-text');
@@ -8,9 +11,15 @@ const progressBar = document.getElementById('progress-bar');
 const restartButton = document.getElementById('restart-button');
 
 function startQuiz() {
+    console.log('Quiz started!');
     currentQuestionIndex = 0;
-    resultContainer.classList.add('hide');
-    questionContainer.classList.remove('hide');
+    console.log(1);
+    landingContainer.classList.add('hide');
+    console.log(2);
+    // resultContainer.classList.add('hide');
+    console.log(3);
+    quizContainer.classList.remove('hide');
+    console.log(4);
     setNextQuestion();
 }
 
@@ -73,8 +82,17 @@ function showResult() {
 }
 
 restartButton.addEventListener('click', () => {
-    window.location.href = 'index.html';
+    quizContainer.classList.add('hide');
+    landingContainer.classList.remove('hide');
+    resetQuiz();
 });
 
-// Start the quiz when the page loads
-startQuiz();
+function resetQuiz() {
+    currentQuestionIndex = 0;
+    resetState();
+    updateProgressBar();
+    questionContainer.classList.remove('hide');
+    resultContainer.classList.add('hide');
+}
+
+startButton.addEventListener('click', startQuiz);

@@ -20,18 +20,35 @@ body {
     align-items: center;
 }
 
-.landing-container {
-    width: 90%;
+.secret-desciprtion {
+    color: #999999;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 0.75rem;
+}
+
+.container {
+    width: 90vw;
+    min-height: 95vh;
     max-width: 600px;
-    height: 100vh;
     background: #fcfbfa;
     padding: 2rem;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
     border-radius: 10px;
+}
+
+.landing-container {
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+h1, .title {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
 }
 
 .title {
@@ -65,22 +82,92 @@ body {
     margin-right: 10px;
 }
 
-.start-button {
+.progress-container {
+    width: 100%;
+    height: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+#progress-bar {
+    height: 100%;
+    background-color: #475d89;
+    border-radius: 5px;
+    width: 0%;
+    transition: width 0.3s ease-in-out;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.btn, .start-button {
     font-family: 'FC Daisy', sans-serif;
     background: #1c2f4a;
     color: white;
     border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: background-color 0.3s;
+}
+
+.start-button {
     padding: 1rem 2rem;
     border-radius: 25px;
-    cursor: pointer;
     font-size: 2rem;
     transition: transform 0.3s, background-color 0.3s;
     margin-top: 1rem;
 }
 
+.btn:hover, .start-button:hover {
+    background: #475d89;
+}
+
 .start-button:hover {
     background: #2c3e50;
     transform: scale(1.05);
+}
+
+.hide {
+    display: none !important;
+}
+
+#result-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+#result-image-container {
+    margin: 2rem 0;
+}
+
+#result-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    max-height: 300px; /* Adjust this value as needed */
+    object-fit: contain;
+}
+
+#result-text {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+}
+
+#restart-button {
+    border-radius: 5px;
+    width: 30%;
 }
 
 .mascot-image {
@@ -89,9 +176,13 @@ body {
 }
 
 @media (max-width: 480px) {
-    .landing-container {
+    .container, .landing-container {
         width: 95%;
         padding: 1rem;
+    }
+    
+    .btn {
+        padding: 0.8rem;
     }
     
     .title {
